@@ -53,9 +53,9 @@ export class ProfileSettingsComponent {
 
   getErrorMessage(form: FormGroup<ControlsOf<IProfile>>) {
     return form.get('email')?.hasError('required')
-      ? 'You must enter a value'
+      ? 'Merci de saisir une valeur'
       : form.get('email')?.hasError('email')
-        ? 'Not a valid email'
+        ? 'Doit être un e-mail valide'
         : '';
   }
 }

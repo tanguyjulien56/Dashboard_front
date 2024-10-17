@@ -89,8 +89,8 @@ export class InMemDataService implements InMemoryDbService {
       id: 1,
       username: 'ng-matero',
       password: 'ng-matero',
-      name: 'Zongbin',
-      email: 'nzb329@163.com',
+      name: 'Guillermo',
+      email: 'memo@caracol.com',
       avatar: 'images/avatar.jpg',
     },
     {
@@ -169,7 +169,7 @@ export class InMemDataService implements InMemoryDbService {
         if (user.password !== password) {
           const result = {
             status: STATUS.UNPROCESSABLE_ENTRY,
-            error: { errors: { password: ['The provided password is incorrect.'] } },
+            error: { errors: { password: ['Le mot de passe est incorrect.'] } },
           };
 
           return Object.assign({ headers, url }, result);

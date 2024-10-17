@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'app-translate',
   template: `
     <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>translate</mat-icon>
+      <mat-icon>language</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">

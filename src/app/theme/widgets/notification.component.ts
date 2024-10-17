@@ -16,7 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
       <mat-nav-list>
         @for (message of messages; track message) {
           <mat-list-item>
-            <mat-icon class="m-x-16" matListItemIcon>info</mat-icon>
+            <mat-icon class="m-x-16" matListItemIcon>perm_device_information</mat-icon>
             <a matListItemTitle href="#">{{ message }}</a>
           </mat-list-item>
         }
