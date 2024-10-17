@@ -1,5 +1,5 @@
-import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { ApexOptions } from 'apexcharts';
 
 export interface PeriodicElement {
@@ -96,6 +96,7 @@ export class DashboardService {
 
   charts: ApexOptions[] = [
     {
+      // chart area
       chart: {
         height: 350,
         type: 'area',
@@ -112,11 +113,11 @@ export class DashboardService {
       series: [
         {
           name: 'UV',
-          data: [31, 40, 28, 51, 42, 109, 100],
+          data: [31, 50, 28, 51, 4, 109, 100],
         },
         {
           name: 'Download',
-          data: [11, 32, 45, 32, 34, 52, 41],
+          data: [11, 32, 45, 102, 34, 52, 41],
         },
       ],
       xaxis: {
@@ -142,6 +143,7 @@ export class DashboardService {
       },
     },
     {
+      // chart radar
       chart: {
         height: 350,
         type: 'radar',
@@ -164,7 +166,7 @@ export class DashboardService {
           },
         },
       },
-      colors: ['#FF4560'],
+      colors: ['#FF9800'],
       markers: {
         size: 4,
         strokeWidth: 2,
@@ -184,6 +186,62 @@ export class DashboardService {
               return '';
             }
           },
+        },
+      },
+    },
+    {
+      // chart pie
+      chart: {
+        height: 396,
+        type: 'pie',
+      },
+      labels: ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron'],
+      series: [44, 55, 13, 43, 22], // Données de l'exemple
+      colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0'],
+      legend: {
+        position: 'bottom',
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: (val: number) => `${val.toFixed(2)}%`,
+      },
+      tooltip: {
+        y: {
+          formatter: (val: number) => `${val}%`,
+        },
+      },
+    },
+    {
+      // Bar chart
+      chart: {
+        height: 350,
+        type: 'bar',
+      },
+      series: [
+        {
+          name: 'Sales',
+          data: [30, 40, 45, 50, 49, 60, 70],
+        },
+      ],
+      xaxis: {
+        categories: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+        },
+      },
+      colors: ['#1E90FF'],
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        position: 'top',
+      },
+      tooltip: {
+        y: {
+          formatter: (val: number) => `${val} units`,
         },
       },
     },
