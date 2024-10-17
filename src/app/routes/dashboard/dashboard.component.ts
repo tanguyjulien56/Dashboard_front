@@ -55,6 +55,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   charts = this.dashboardSrv.getCharts();
   chart1?: ApexCharts;
   chart2?: ApexCharts;
+  chart3?: ApexCharts;
+  chart4?: ApexCharts;
 
   stats = this.dashboardSrv.getStats();
 
@@ -75,6 +77,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.chart1?.destroy();
     this.chart2?.destroy();
+    this.chart3?.destroy();
+    this.chart4?.destroy();
 
     this.notifySubscription.unsubscribe();
   }
@@ -84,6 +88,10 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chart1?.render();
     this.chart2 = new ApexCharts(document.querySelector('#chart2'), this.charts[1]);
     this.chart2?.render();
+    this.chart3 = new ApexCharts(document.querySelector('#chart3'), this.charts[2]);
+    this.chart3?.render();
+    this.chart4 = new ApexCharts(document.querySelector('#chart4'), this.charts[3]);
+    this.chart4?.render();
 
     this.updateCharts(this.settings.options);
   }
@@ -115,6 +123,23 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
             },
           },
         },
+      },
+      tooltip: {
+        theme: opts.theme === 'dark' ? 'dark' : 'light',
+      },
+    });
+
+    this.chart3?.updateOptions({
+      chart: {
+        foreColor: opts.theme === 'dark' ? '#ccc' : '#333',
+      },
+      tooltip: {
+        theme: opts.theme === 'dark' ? 'dark' : 'light',
+      },
+    });
+    this.chart4?.updateOptions({
+      chart: {
+        foreColor: opts.theme === 'dark' ? '#ccc' : '#333',
       },
       tooltip: {
         theme: opts.theme === 'dark' ? 'dark' : 'light',

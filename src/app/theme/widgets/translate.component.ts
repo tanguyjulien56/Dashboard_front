@@ -31,12 +31,14 @@ export class TranslateComponent {
   langs = {
     'en-US': 'English',
     'fr-FR': 'Français',
+    'es-ES': 'Español',
+    'ro-RO': 'Română',
     'zh-CN': '中文简体',
     'zh-TW': '中文繁体',
   };
 
   constructor() {
-    this.translate.addLangs(['en-US', 'fr-FR', 'zh-CN', 'zh-TW']);
+    this.translate.addLangs(['en-US', 'fr-FR', 'es-ES', 'ro-RO', 'zh-CN', 'zh-TW']);
   }
 
   useLanguage(language: string) {
