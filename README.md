@@ -124,7 +124,7 @@ Take a look at `http://localhost:4200/#/abc/def`, enjoy it!
 $ git clone git@github.com:ng-matero/ng-matero.git
 $ cd ng-matero
 $ npm install
-$ npm run start
+$ npm run start / $ npm run start:local
 ```
 
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
