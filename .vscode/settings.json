@@ -1,5 +1,5 @@
 {
-  "editor.rulers": [100],
+  "editor.rulers": [],
   "html.format.wrapLineLength": 100,
   "html.format.wrapAttributes": "preserve-aligned",
   "[javascript]": {
