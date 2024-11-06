@@ -11,6 +11,29 @@
       }
     },
     {
+      "route": "kpis",
+      "name": "kpis",
+      "type": "sub",
+      "icon": "bar_chart",
+      "children": [
+        {
+          "route": "security",
+          "name": "security",
+          "type": "link",
+          "icon": "colorize"
+        },
+        {
+          "route": "quality",
+          "name": "quality",
+          "type": "link",
+          "icon": "flag"
+        }
+      ],
+      "permissions": {
+        "only": ["ADMIN", "MANAGER"]
+      }
+    },
+    {
       "route": "design",
       "name": "design",
       "type": "sub",
@@ -34,10 +57,7 @@
         }
       ],
       "permissions": {
-        "only": [
-          "ADMIN",
-          "MANAGER"
-        ]
+        "only": ["ADMIN", "MANAGER"]
       }
     },
     {
@@ -265,10 +285,7 @@
         }
       ],
       "permissions": {
-        "except": [
-          "MANAGER",
-          "GUEST"
-        ]
+        "except": ["MANAGER", "GUEST"]
       }
     },
     {
