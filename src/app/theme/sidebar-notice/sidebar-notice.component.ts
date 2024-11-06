@@ -15,7 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 export class SidebarNoticeComponent {
   tabs = [
     {
-      label: 'Today 📅',
+      label: `Aujourd'hui 📅`,
       messages: [
         {
           icon: '🔔',

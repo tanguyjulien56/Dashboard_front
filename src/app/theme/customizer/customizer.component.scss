@@ -1,11 +1,14 @@
 .customizer-handle {
   position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
+  top: 1.5%;
+  right: 18rem;
   z-index: 1;
+}
 
-  [dir='rtl'] & {
-    right: auto;
-    left: 2rem;
-  }
+.customizer-handle button {
+  width: 35px !important;
+  height: 35px !important;
+  color: #BEC9C8;
+  background: none;
+  border: none;
 }

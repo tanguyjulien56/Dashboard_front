@@ -67,10 +67,6 @@ export class CustomizerComponent {
 
   private drawerRef?: MtxDrawerRef;
 
-  onDragStart(event: CdkDragStart) {
-    this.dragging = true;
-  }
-
   openPanel(templateRef: TemplateRef<any>) {
     if (this.dragging) {
       this.dragging = false;
