@@ -366,6 +366,32 @@
       }
     },
     {
+      "route": "team",
+      "name": "team",
+      "type": "sub",
+      "icon": "groups",
+      "children": [
+        {
+          "route": "list",
+          "name": "list",
+          "type": "link"
+        },
+        {
+          "route": "create",
+          "name": "create",
+          "type": "link"
+        },
+        {
+          "route": "overview",
+          "name": "overview",
+          "type": "link"
+        }
+      ],
+      "permissions": {
+        "except": "GUEST"
+      }
+    },
+    {
       "route": "profile",
       "name": "profile",
       "type": "sub",
