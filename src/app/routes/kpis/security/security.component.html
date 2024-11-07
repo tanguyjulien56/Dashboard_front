@@ -1,21 +1,9 @@
-<div class="row">
-  @for (color of colors; track trackByColor($index, color)) {
-    <div class="col-sm-6 col-md-3 col-xl-2">
-      <div class="b-1 m-b-16 r-16 overflow-hidden">
-        <div class="p-8 text-capitalize text-{{color.key}}-95 bg-{{color.key}}-10">{{color.key}}</div>
+<page-header class="bg-magenta-40" />
 
-        @for (hue of color.value | keyvalue: keyAscOrder; track hue) {
-          @if (hue.key > 0 && hue.key < 100) {
-            <div class="d-flex p-8 bg-{{color.key + '-' + hue.key}}"
-                [class.text-light]="hue.key <= 60"
-                [class.text-dark]="hue.key > 60">
-              <span>{{hue.key}}</span>
-              <span class="flex-fill"></span>
-              <span>{{hue.value}}</span>
-            </div>
-          }
-        }
-      </div>
-    </div>
-  }
+<div class="col-md-13">
+  <mat-card>
+    <mat-card-content id="content">
+      <div id="chart1"></div>
+    </mat-card-content>
+  </mat-card>
 </div>

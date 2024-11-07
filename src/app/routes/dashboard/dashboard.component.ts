@@ -71,7 +71,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.ngZone.runOutsideAngular(() => this.initCharts());
+    this.initCharts();
   }
 
   ngOnDestroy() {
@@ -84,16 +84,27 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   initCharts() {
-    this.chart1 = new ApexCharts(document.querySelector('#chart1'), this.charts[0]);
-    this.chart1?.render();
-    this.chart2 = new ApexCharts(document.querySelector('#chart2'), this.charts[1]);
-    this.chart2?.render();
-    this.chart3 = new ApexCharts(document.querySelector('#chart3'), this.charts[2]);
-    this.chart3?.render();
-    this.chart4 = new ApexCharts(document.querySelector('#chart4'), this.charts[3]);
-    this.chart4?.render();
+    setTimeout(() => {
+      // Utiliser setTimeout pour s'assurer que l'élément est dans le DOM
 
-    this.updateCharts(this.settings.options);
+      // Initialisation des graphiques, vérification de l'existence des éléments DOM
+      this.initChart('#chart1', this.charts[0], chart => (this.chart1 = chart));
+      this.initChart('#chart2', this.charts[1], chart => (this.chart2 = chart));
+      this.initChart('#chart3', this.charts[2], chart => (this.chart3 = chart));
+      this.initChart('#chart4', this.charts[3], chart => (this.chart4 = chart));
+    });
+  }
+
+  // Fonction générique pour initialiser un graphique
+  initChart(selector: string, chartOptions: any, assignTo: (chart: ApexCharts) => void) {
+    const chartElement = document.querySelector(selector) as HTMLElement;
+    if (chartElement) {
+      const chart = new ApexCharts(chartElement, chartOptions);
+      chart.render().catch(error => console.error('Erreur lors du rendu du graphique : ', error));
+      assignTo(chart);
+    } else {
+      console.error(`Élément ${selector} introuvable`);
+    }
   }
 
   updateCharts(opts: Partial<AppSettings>) {

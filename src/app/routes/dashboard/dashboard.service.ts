@@ -98,7 +98,7 @@ export class DashboardService {
     {
       // chart area
       chart: {
-        height: 350,
+        height: '350',
         type: 'area',
         toolbar: {
           show: false,
@@ -192,7 +192,7 @@ export class DashboardService {
     {
       // chart pie
       chart: {
-        height: 396,
+        height: 365,
         type: 'pie',
       },
       labels: ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron'],
